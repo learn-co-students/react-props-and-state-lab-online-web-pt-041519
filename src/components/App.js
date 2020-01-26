@@ -37,10 +37,6 @@ class App extends React.Component {
   onAdoptPet = (id) => {
     let pet = this.state.pets.find( p => p.id === id)
     pet.isAdopted = true
-    let updatedPets = this.state.pets
-    this.setState({
-      pets: updatedPets
-    })
   }
 
   render() {
