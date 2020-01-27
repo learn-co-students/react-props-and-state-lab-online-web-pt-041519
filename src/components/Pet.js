@@ -3,19 +3,17 @@ import React from 'react'
 class Pet extends React.Component {
 
   onAdoptPet = e => {
-    console.log("adopt")
-    // this.props.onAdoptPet(this.props.pet.id)
+    this.props.onAdoptPet(this.props.pet.id)
   }
 
   render() {
-    const {pet, isAdopted} = this.props
-    const {name, type, gender, age, weight} = pet
+    const {name, type, gender, age, weight, isAdopted} = this.props.pet
     return (
       <div className="card">
         <div className="content">
-          <a className="header">
+          <div className="header">
             {gender === 'male' ? '♂' : '♀' } {name} 
-          </a>
+          </div>
           <div className="meta">
             <span className="date">{type}</span>
           </div>
@@ -25,8 +23,8 @@ class Pet extends React.Component {
           </div>
         </div>
         <div className="extra content">
-          { !isAdopted && <button className="ui disabled button" onClick={this.onAdoptPet}>Already adopted</button> }
-          { isAdopted && <button className="ui primary button">Adopt pet</button> }
+          { isAdopted && <button className="ui disabled button">Already adopted</button> }
+          { !isAdopted && <button className="ui primary button" onClick={this.onAdoptPet}>Adopt pet</button> }
         </div>
       </div>
     )
