@@ -119,3 +119,37 @@ descendants:
 - [State Updates May Be Asynchronous](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/react-props-and-state-lab'>Props And State Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+
+
+import React from 'react'
+
+class Pet extends React.Component {
+  render() {
+    return (
+      <div className="card">
+        <div className="content">
+          <a className="header">
+            {/*'♀' OR '♂' */}
+            PET NAME
+          </a>
+          <div className="meta">
+            <span className="date">PET TYPE</span>
+          </div>
+          <div className="description">
+            <p>Age: PET AGE</p>
+            <p>Weight: PET WEIGHT</p>
+          </div>
+        </div>
+        <div className="extra content">
+          <button className="ui disabled button">Already adopted</button>
+          <button className="ui primary button">Adopt pet</button>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Pet
+
