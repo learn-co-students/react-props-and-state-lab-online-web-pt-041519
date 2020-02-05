@@ -13,16 +13,17 @@ class App extends React.Component {
         type: 'all'
       }
     }
+    // Bind onChangeType; use instead of arrow function
+    this.onChangeType = this.onChangeType.bind(this);
   }
 
   // Change filter type state to child component type
-  onChangeType = ({target: {value} }) => {
+  onChangeType(event) {
     this.setState({
       filters: { 
-        ...this.state.filters,
-        type: value
+        type: event.target.value
       }
-    })
+    })    
   }
 
   // Fetch list of pets based on type
